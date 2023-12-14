@@ -1,6 +1,6 @@
 {
   "name": "webchat3",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "webchat app",
   "main": "main.js",
   "scripts": {
