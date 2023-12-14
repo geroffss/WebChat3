@@ -4,7 +4,11 @@
   "description": "webchat app",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder build --mac --win --publish never",
+"deploy": "electron-builder build --mac --win --publish always"
+
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/geroffss/WebChat3/issues"
   },
-  "homepage": "https://github.com/geroffss/WebChat3#readme"
+  "homepage": "https://github.com/geroffss/WebChat3#readme",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "electron-updater": "^6.1.7"
+  }
 }
