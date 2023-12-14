@@ -1,27 +1,30 @@
+// main.js - Main process handling
+
 const { autoUpdater } = require('electron-updater');
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-      
     },
   });
+
   mainWindow.loadFile('index.html');
+
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
+
+  autoUpdater.checkForUpdatesAndNotify();
 }
 
 app.on('ready', () => {
-    
   createWindow();
-  autoUpdater.checkForUpdatesAndNotify();
 });
 
 app.on('window-all-closed', function () {
@@ -36,16 +39,14 @@ app.on('activate', function () {
   }
 });
 
-ipcMain.on('app_version', (event) => {
-  event.sender.send('app_version', { version: app.getVersion() });
+autoUpdater.on('update-available', () => {
+  mainWindow.webContents.send('update_available');
 });
 
-autoUpdater.on('update-available', () => {
-    mainWindow.webContents.send('update_available');
-  });
-  autoUpdater.on('update-downloaded', () => {
-    mainWindow.webContents.send('update_downloaded');
-  });
-  ipcMain.on('restart_app', () => {
-    autoUpdater.quitAndInstall();
-  });
+autoUpdater.on('update-downloaded', () => {
+  mainWindow.webContents.send('update_downloaded');
+});
+
+ipcMain.on('restart_app', () => {
+  autoUpdater.quitAndInstall();
+});
