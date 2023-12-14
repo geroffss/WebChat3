@@ -46,8 +46,9 @@ autoUpdater.on('update-available', () => {
 
 autoUpdater.on('update-downloaded', () => {
   mainWindow.webContents.send('update_downloaded');
-  // Listen for the 'restart_app' message from renderer process
-  ipcMain.on('restart_app', () => {
-    autoUpdater.quitAndInstall();
-  });
+});
+
+// Listen for the 'restart_app' message from renderer process
+ipcMain.on('restart_app', () => {
+  autoUpdater.quitAndInstall();
 });
