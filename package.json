@@ -1,0 +1,19 @@
+{
+  "name": "webchat3",
+  "version": "1.0.0",
+  "description": "webchat app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geroffss/WebChat3.git"
+  },
+  "author": "geroffss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geroffss/WebChat3/issues"
+  },
+  "homepage": "https://github.com/geroffss/WebChat3#readme"
+}
