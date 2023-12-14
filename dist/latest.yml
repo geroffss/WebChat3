@@ -1,0 +1,8 @@
+version: 1.0.3
+files:
+  - url: webchat3-Setup-1.0.3.exe
+    sha512: Yy7e4XsEk9MTWJcR6d2LDeGnRTSmgRQfLFN/0J6WSFPSAImX+dM46wKcRo5F9bg69G8Yiliix6qHeqGNuJEwLw==
+    size: 78947391
+path: webchat3-Setup-1.0.3.exe
+sha512: Yy7e4XsEk9MTWJcR6d2LDeGnRTSmgRQfLFN/0J6WSFPSAImX+dM46wKcRo5F9bg69G8Yiliix6qHeqGNuJEwLw==
+releaseDate: '2023-12-14T10:20:42.862Z'

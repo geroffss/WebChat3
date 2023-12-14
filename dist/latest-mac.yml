@@ -1,0 +1,11 @@
+version: 1.0.3
+files:
+  - url: webchat3-1.0.3-arm64-mac.zip
+    sha512: t+ZXa2Dr7qUILjoWKlmJPDDDBrMJKcSSz8iefXZgAyJQT4lEr2XOrCBE41XhoEvbcnwG1fLGddM9PEbdFwuehA==
+    size: 90872403
+  - url: webchat3-1.0.3-arm64.dmg
+    sha512: 4sDpXyrK5s6C5cYxytLtnXCDhz5alhuqS/xnkVbxL+N2cCRuP5VxR9zwGjpIVRnQ1mpTAecT4HHs1tt1AxCFOg==
+    size: 94088743
+path: webchat3-1.0.3-arm64-mac.zip
+sha512: t+ZXa2Dr7qUILjoWKlmJPDDDBrMJKcSSz8iefXZgAyJQT4lEr2XOrCBE41XhoEvbcnwG1fLGddM9PEbdFwuehA==
+releaseDate: '2023-12-14T10:20:42.862Z'
