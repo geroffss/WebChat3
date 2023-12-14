@@ -20,7 +20,7 @@ function createWindow() {
     mainWindow = null;
   });
 
-  autoUpdater.checkForUpdatesAndNotify();
+
 }
 
 app.on('ready', () => {
@@ -39,14 +39,12 @@ app.on('activate', function () {
   }
 });
 
-autoUpdater.on('update-available', () => {
-  mainWindow.webContents.send('update_available');
-});
-
-autoUpdater.on('update-downloaded', () => {
-  mainWindow.webContents.send('update_downloaded');
-});
-
-ipcMain.on('restart_app', () => {
-  autoUpdater.quitAndInstall();
-});
+const { updateElectronApp, UpdateSourceType } = require('update-electron-app')
+updateElectronApp({
+  updateSource: {
+    type: UpdateSourceType.ElectronPublicUpdateService,
+    repo: 'https://github.com/geroffss/WebChat3'
+  },
+  updateInterval: '1 hour',
+  logger: require('electron-log')
+})
