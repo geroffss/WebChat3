@@ -3,7 +3,7 @@ const { autoUpdater } = require('electron-updater');
 
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -22,10 +22,7 @@ function createWindow () {
   });
 }
 
-app.on('ready', () => {
-  
-  createWindow();
-});
+app.on('ready', createWindow);
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
@@ -49,8 +46,8 @@ autoUpdater.on('update-available', () => {
 
 autoUpdater.on('update-downloaded', () => {
   mainWindow.webContents.send('update_downloaded');
-});
-
-ipcMain.on('restart_app', () => {
-  autoUpdater.quitAndInstall();
+  // Listen for the 'restart_app' message from renderer process
+  ipcMain.on('restart_app', () => {
+    autoUpdater.quitAndInstall();
+  });
 });
