@@ -1,6 +1,4 @@
 // main.js - Main process handling
-
-const { autoUpdater } = require('electron-updater');
 const { app, BrowserWindow, ipcMain } = require('electron');
 
 let mainWindow;
@@ -38,13 +36,3 @@ app.on('activate', function () {
     createWindow();
   }
 });
-
-const { updateElectronApp, UpdateSourceType } = require('update-electron-app')
-updateElectronApp({
-  updateSource: {
-    type: UpdateSourceType.ElectronPublicUpdateService,
-    repo: 'https://github.com/geroffss/WebChat3'
-  },
-  updateInterval: '1 hour',
-  logger: require('electron-log')
-})
